@@ -55,6 +55,14 @@ class SimpleSerial {
 		 *  @return true if successfull
 		 */
 		bool getInt(int *ret);
+        
+        /** Read the token as double or returns false if the token is not a double.
+         *  The sign can be '-','+' or missing (+). 
+         *  Example -13.043
+         *  @param[out] ret     The token as Double
+         *  @return true if successfull
+         */
+        bool getDouble(double *ret);
 
 		/** Returns the token as String(Char-array). Does only write the output of read() into the
 		 *  buffer until the end of the token is reached or the buffer is full.
@@ -63,6 +71,8 @@ class SimpleSerial {
 		 *  @return used buffer size
 		 */
 		uint8_t getString(char* buffer, uint8_t buffer_size);
+      //  uint8_t getString(char* buffer, uint8_t buffer_size, char* symbs, bool dontClearBuffer);
+		//@TODO something for regEx
 };
 
 #endif
